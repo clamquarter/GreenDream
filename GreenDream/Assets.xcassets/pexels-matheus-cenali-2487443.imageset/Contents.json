@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "pexels-matheus-cenali-2487443.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "pexels-matheus-cenali-2487444.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "pexels-matheus-cenali-2487445.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
