@@ -10,6 +10,13 @@ import SwiftUI
 struct HomeScreenView: View {
     @State private var searchField:String = ""
     
+    //made add to cart button global so we can adjust it's function all around
+    
+    var addButton = Button("Add to Cart") {
+        
+    }
+    
+    
     var body: some View {
         NavigationView {
         
@@ -79,17 +86,15 @@ struct HomeScreenView: View {
                 HStack(){
                     VStack(){
                         
-                        Image("Onion")
+                        Image("onion")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 100, height: 100)
                         
                         Text("Onion")
                         Text("$.60")
-                        
-                        Button("Add to Cart") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                        }
+                        addButton
+                       
                         .background(.green)
                         .foregroundColor(Color.black)
                         .padding(20)
@@ -97,7 +102,7 @@ struct HomeScreenView: View {
                     }
                     VStack(){
                         
-                        Image("Cucumber")
+                        Image("cucumber")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 100, height: 100)
@@ -121,16 +126,16 @@ struct HomeScreenView: View {
                 HStack(){
                     
                     VStack(){
-                        Image("Tomatoe")
+                        Image("tomatoe")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 100, height: 100)
                         
-                        Text("Tomatoe")
+                        Text("tomatoe")
                         Text("$0.95")
                         
                         Button("Add to Cart") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                            
                         }
                         .background(.green)
                         .foregroundColor(Color.black)
