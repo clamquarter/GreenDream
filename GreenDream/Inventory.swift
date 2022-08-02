@@ -1,5 +1,5 @@
 //
-//  inventory.swift
+//  Inventory.swift
 //  GreenDream
 //
 //  Created by Marcey Carroll on 8/1/22.
