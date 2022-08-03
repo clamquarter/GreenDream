@@ -1,5 +1,5 @@
 //
-//  EndScreen.swift
+//  EndView.swift
 //  GreenDream
 //
 //  Created by Nicholas Gordon on 7/28/22.
@@ -9,7 +9,7 @@ import SwiftUI
 
 var thankyou = "Thank you for Shopping! ____ is preparing you order. Please shop again"
 
-struct EndScreen: View {
+struct EndView: View {
     var body: some View {
         VStack(){
         
@@ -26,8 +26,8 @@ struct EndScreen: View {
     }
 }
 
-struct EndScreen_Previews: PreviewProvider {
+struct EndView_Previews: PreviewProvider {
     static var previews: some View {
-        EndScreen()
+        EndView()
     }
 }

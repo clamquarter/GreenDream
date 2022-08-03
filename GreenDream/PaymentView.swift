@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct PaymentScreen: View {
+struct PaymentView: View {
     
     @State private var cardName:String = ""
     @State private var cardNumber:String = ""
@@ -59,7 +59,7 @@ struct PaymentScreen: View {
                 Spacer()
                     .frame(height:50)
                 
-                NavigationLink(destination: EndScreen()) {
+                NavigationLink(destination: EndView()) {
                     Text("Proceed to checkout")
                         .padding(20)
                         .background(.green)
@@ -81,9 +81,9 @@ struct PaymentScreen: View {
 
 
 
-struct PaymentScreen_Previews: PreviewProvider {
+struct PaymentView_Previews: PreviewProvider {
     static var previews: some View {
-        PaymentScreen()
+        PaymentView()
     }
 }
 

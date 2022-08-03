@@ -71,7 +71,7 @@ struct Inventorydisplay: View {
     
 }
 
-struct HomeScreenView: View {
+struct CatalogView: View {
     @State private var searchField:String = ""
     let columns = [GridItem(.adaptive(minimum: 150), spacing: 10)]
     
@@ -162,7 +162,7 @@ struct HomeScreenView: View {
         
           
         
-                NavigationLink(destination: ProductScreen()) {
+                NavigationLink(destination: CheckoutView()) {
                     Image(systemName: "cart")
                         .buttonStyle(.plain)
                         .font(.system(size: 50))
@@ -177,7 +177,7 @@ struct HomeScreenView: View {
 }
 struct HomeScreenUpdated_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreenView()
+        CatalogView()
     }
 }
 

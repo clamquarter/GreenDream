@@ -1,12 +1,12 @@
 //
-//  ProductScreen.swift
+//  CheckoutView.swift
 //  GreenDream
 //
 //  Created by Nicholas Gordon on 7/27/22.
 //
 import SwiftUI
 
-struct ProductScreen: View {
+struct CheckoutView: View {
 //    let foods = cart
     
     var body: some View {
@@ -78,7 +78,7 @@ struct ProductScreen: View {
                 Spacer()
 
 
-                NavigationLink(destination: PaymentScreen()) {
+                NavigationLink(destination: PaymentView()) {
                     Image(systemName: "creditcard")
                         .buttonStyle(.plain)
                         .font(.system(size: 50))
@@ -107,9 +107,9 @@ struct ProductScreen: View {
     
     
 }
-struct ProductScreen_Previews: PreviewProvider {
+struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductScreen()
+        CheckoutView()
     }
 }
 

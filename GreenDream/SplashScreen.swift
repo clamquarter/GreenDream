@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SpashScreen.swift
 //  GreenDream
 //
 //  Created by Nicholas Gordon on 7/27/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SpashScreen: View {
     @State private var isActive = false
     @State private var size = 0.8
     @State private var opacity = 0.5
@@ -15,7 +15,7 @@ struct ContentView: View {
 
     var body: some View {
         if isActive {
-            HomeScreenView()
+            CatalogView()
             
         }
         else {
@@ -55,9 +55,9 @@ struct ContentView: View {
         
 }
      
-struct ContentView_Previews: PreviewProvider {
+struct SpashScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SpashScreen()
     }
 }
 }
