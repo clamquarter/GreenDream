@@ -7,6 +7,9 @@
 
 import Foundation
 
+let numberFormatter = NumberFormatter()
+
+
 class Food:Identifiable {
     var id: UUID
     var name: String?

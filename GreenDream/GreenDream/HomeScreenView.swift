@@ -11,42 +11,54 @@ import SwiftUI
 struct Inventorydisplay: View {
     
     var food:Food
+    
     var body: some View{
         
         
         VStack(){
-            
-            HStack(){
+            ZStack(){
                 
-                VStack(){
-                Image(food.image!)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100)
-                    
-                    Spacer()
-                        .frame(height:20)
                 
-                Text(food.name!)
+                HStack(){
                     
-                    Text("$" + String(food.price))
-                    
-                    Button("Add to Cart") {
-                        cart.append(Food(name: food.name!, price: food.price, farm: food.farm!, image: food.image!))
-                        print("this button works")
-                        print(cart[0])
-                        print(cart)
+                    VStack(){
+                        
+                        Image(food.image!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100, height: 100)
+                        
+                        
+                        Spacer()
+                            .frame(height:20)
+                        
+                        Text(food.name!)
+                            //.bold()
+                        Text("$" + String(food.price))
+                            .bold()
+                        Text(food.farm!)
+                            
+                        
+        
+                        
+                        Button("Add to Cart") {
+                            cart.append(Food(name: food.name!, price: food.price, farm: food.farm!, image: food.image!))
+                            print("this button works")
+                            print(cart[0])
+                            print(cart)
+                        }
+                        .background(.green)
+                        .foregroundColor(Color.black)
+                        .padding(20)
+                        
+                        
                     }
-                    .background(.green)
-                    .foregroundColor(Color.black)
-                    .padding(20)
+                    Spacer()
+                        .frame(width: 30)
                     
-                   
+                    
+                    
                 }
-                Spacer()
-                Text(food.farm!)
-                
-                
                 
             }
         }
@@ -63,6 +75,7 @@ struct Inventorydisplay: View {
 
 struct HomeScreenView: View {
     @State private var searchField:String = ""
+    let columns = [GridItem(.adaptive(minimum: 150), spacing: 10)]
     
     var body: some View {
         NavigationView{
@@ -91,9 +104,6 @@ struct HomeScreenView: View {
                     Spacer()
                     ZStack() {
                         
-                        
-                        //Enter zipcode
-                        //some code would run to find local farms with address entered and apply data for next screen
                         if searchField.isEmpty {
                             Text("Name or Location")
                                 .foregroundColor(Color.black)
@@ -101,8 +111,6 @@ struct HomeScreenView: View {
                                 .multilineTextAlignment(.center)
                                 .background(.green)
                                 .frame(width: 250, height: 5)
-                            
-                            
                             
                         }
                         
@@ -125,19 +133,28 @@ struct HomeScreenView: View {
                 }
             
         
-        List{
-            
-            ForEach(Inventory) {food in
-                Inventorydisplay(food: food)
-            
-            
+        HStack(){
+            Spacer()
+            Text("Item")
+                .bold()
+            Spacer()
+        }
+                ScrollView{
+                    LazyVGrid(columns: columns){
+                        ForEach(Inventory) {food in
+                            Inventorydisplay(food: food)
+                        
+                        
 
-            }
+                        }
+                    }
+                }
+            
             
             
         
           
-        }
+        
                 NavigationLink(destination: ProductScreen()) {
                     Image(systemName: "cart")
                         .buttonStyle(.plain)
