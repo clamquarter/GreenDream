@@ -16,6 +16,11 @@ struct PaymentScreen: View {
     @State private var streetAddress:String = ""
     @State private var zipcode:String = ""
     @State private var cardExp:String = ""
+    @State private var emailAddress:String = ""
+    @State private var phoneNumber:String = ""
+    @State private var city:String = ""
+    @State private var state:String = ""
+    
    
     var body: some View {
         
@@ -23,194 +28,32 @@ struct PaymentScreen: View {
         VStack(){
             
             Group{
-                
-                
-                Image("Logo")
-                
                 Text("Green Dream")
                     .foregroundColor(Color.black)
                     .bold()
                     .font(.system(size:60))
                    
-                
-                Spacer()
-                    .frame(height:30)
-                
-                
-                Image(systemName: "creditcard")
-                    .font(.system(size: 50))
-                    .padding(10)
-                    .frame(width: 60, height: 50)
-                
-                
+        
                 Spacer()
                     .frame(height:30)
             }
             
             Group {
-                ZStack() {
-                    
-                    
-                    //Enter Name
-                    //some code would run to find local farms with address entered and apply data for next screen
-                    if cardName.isEmpty {
-                        Text("Name on Card")
-                            .foregroundColor(Color.black)
-                            .bold()
-                            .multilineTextAlignment(.center)
-                            .frame(width: 250, height: 5)
-                        
-                        
-                        
-                    }
-                    
-                    TextField("", text: $cardName)
-                    
-                    
-                }
-                .foregroundColor(Color.black)
-                .border((Color(UIColor.green)))
-                .multilineTextAlignment(.center)
-                .frame(width: 250)
-                
-                
-                Spacer()
-                    .frame(height: 10)
-                
-                ZStack() {
-                    
-                    
-                    //Enter zipcode
-                    //some code would run to find local farms with address entered and apply data for next screen
-                    if streetAddress.isEmpty {
-                        Text("Street Address")
-                            .foregroundColor(Color.black)
-                            .bold()
-                            .multilineTextAlignment(.center)
-                        
-                            .frame(width: 250)
-                        
-                        
-                        
-                    }
-                    
-                    TextField("", text: $streetAddress)
-                    
-                    
-                }
-                .foregroundColor(Color.black)
-                .border((Color(UIColor.green)))
-                .multilineTextAlignment(.center)
-                .frame(width: 250)
-                
-                Spacer()
-                    .frame(height:10)
-                
-                ZStack() {
-                    
-                    
-                    //Enter zipcode
-                    //some code would run to find local farms with address entered and apply data for next screen
-                    if zipcode.isEmpty {
-                        Text("City/State/Zip")
-                            .foregroundColor(Color.black)
-                            .bold()
-                            .multilineTextAlignment(.center)
-                        
-                            .frame(width: 250)
-                        
-                        
-                        
-                    }
-                    
-                    TextField("", text: $zipcode)
-                    
-                    
-                }
-                .foregroundColor(Color.black)
-                .border((Color(UIColor.green)))
-                .multilineTextAlignment(.center)
-                .frame(width: 250)
-                
-                Spacer()
-                    .frame(height:10)
-                
-                ZStack() {
-                    
-                    
-                    //Enter zipcode
-                    //some code would run to find local farms with address entered and apply data for next screen
-                    if cardNumber.isEmpty {
-                        Text("Card Number")
-                            .foregroundColor(Color.black)
-                            .bold()
-                            .multilineTextAlignment(.center)
-                        
-                            .frame(width: 250)
-                        
-                        
-                        
-                    }
-                    
-                    TextField("", text: $cardNumber)
-                    
-                    
-                }
-                .foregroundColor(Color.black)
-                .border((Color(UIColor.green)))
-                .multilineTextAlignment(.center)
-                .frame(width: 250)
-                
-                
-                
-                HStack(){
-                    
-                    ZStack(){
-                        if cardExp.isEmpty {
-                            Text("Exp date")
-                                .foregroundColor(Color.black)
-                                .bold()
-                                .multilineTextAlignment(.center)
-                                .frame(width: 125)
-                               
-                            
-                            
-                        }
-                        
-                        TextField("", text: $cardExp)
-                        
-                    }
-                    //Spacer below is problem
+                VStack {
+                    TextField("Name on Card", text: $cardName)
+                        .padding(.leading, 1.0)
                     Spacer()
-                    .foregroundColor(Color.black)
-                    .border((Color(UIColor.green)))
-                    .multilineTextAlignment(.center)
-                    .frame(width: 125)
-                    
-                    
-                    
-                    
-                    
-                    ZStack(){
-                        if cardCode.isEmpty {
-                            Text("Code")
-                                .foregroundColor(Color.black)
-                                .bold()
-                                .multilineTextAlignment(.center)
-                                .frame(width: 125)
-                                
-                            
-                            
-                        }
-                        
-                        TextField("", text: $cardCode)
-                        
+                        .frame(width: 13.0, height:16)
+                    TextField("StreetAddress", text: $streetAddress)
+                    Spacer()
+                        .frame(height:16)
+                    HStack{
+                        TextField("City", text: $city)
+                        TextField("State", text: $state)
+                        TextField("Zip Code", text: $zipcode)
                     }
                 }
-                .foregroundColor(Color.black)
-                .border((Color(UIColor.green)))
-                .multilineTextAlignment(.center)
-                .frame(width: 125)
+                
                 
                 
                 Spacer()
@@ -222,8 +65,6 @@ struct PaymentScreen: View {
                         .background(.green)
                         .foregroundColor(.black)
                         .frame(width: 200, height: 50)
-                    
-                
             }
             
         }

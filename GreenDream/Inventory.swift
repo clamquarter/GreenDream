@@ -7,15 +7,17 @@
 
 import Foundation
 
-class Food {
-    
+class Food:Identifiable {
+    var id: UUID
     var name: String?
     var price: Float
     var farm: String?
     var image: String?
     
+    
     init(name:String, price:Float, farm:String, image:String)
     {
+        self.id = UUID()
         self.name = name
         self.price = price
         self.farm = farm

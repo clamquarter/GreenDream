@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A43F56142899663E003A2994 /* CartArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F56132899663E003A2994 /* CartArray.swift */; };
 		A4F189B32899517F0084D80A /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F189B22899517F0084D80A /* Inventory.swift */; };
 		D7B03151289189FB0039BF1A /* GreenDreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B03150289189FB0039BF1A /* GreenDreamApp.swift */; };
 		D7B03153289189FB0039BF1A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B03152289189FB0039BF1A /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A43F56132899663E003A2994 /* CartArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartArray.swift; sourceTree = "<group>"; };
 		A4F189B22899517F0084D80A /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = SOURCE_ROOT; };
 		D7B0314D289189FB0039BF1A /* GreenDream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenDream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B03150289189FB0039BF1A /* GreenDreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenDreamApp.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				D7B031622892B4230039BF1A /* PaymentScreen.swift */,
 				D7B0316428933B200039BF1A /* EndScreen.swift */,
 				A4F189B22899517F0084D80A /* Inventory.swift */,
+				A43F56132899663E003A2994 /* CartArray.swift */,
 				D7B03154289189FC0039BF1A /* Assets.xcassets */,
 				D7B03156289189FC0039BF1A /* Preview Content */,
 			);
@@ -157,6 +160,7 @@
 				D7B031632892B4230039BF1A /* PaymentScreen.swift in Sources */,
 				D7B0316528933B200039BF1A /* EndScreen.swift in Sources */,
 				A4F189B32899517F0084D80A /* Inventory.swift in Sources */,
+				A43F56142899663E003A2994 /* CartArray.swift in Sources */,
 				D7B0315F2891A9850039BF1A /* HomeScreenView.swift in Sources */,
 				D7B03153289189FB0039BF1A /* ContentView.swift in Sources */,
 				D7B03151289189FB0039BF1A /* GreenDreamApp.swift in Sources */,
