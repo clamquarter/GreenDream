@@ -50,13 +50,13 @@ struct CheckoutView: View {
             cart[ndx].qty = food.qty
             food.qty += 1
             total += food.price
-            cartTotal = total
+            //cartTotal = total
         } else {
         cart.append(food)
         total += food.price
             food.qty += 1
             print("cart total: \(total)")
-            cartTotal = total
+            //cartTotal = total
         }
         
     }
