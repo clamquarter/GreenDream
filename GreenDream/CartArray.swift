@@ -6,35 +6,73 @@
 //
 
 import Foundation
+import UIKit
 import SwiftUI
-
-import Foundation
 
 
 var cart = [Food]()
 var total: Float = 0
 
-//let Cart = Array((Set(cart))
 
-
-var food: [Food] = []
-    //var total:Float = 0
-    
-//    func addToCart(food: Food) {
-//        
-//        if let ndx = cart.firstIndex(where: {$0.name == food.name}) {
-//            cart[ndx].price = food.price
-//            cart[ndx].qty = food.qty
-//            food.qty += 1
-//            total += food.price
-//        } else {
-//        cart.append(food)
-//        total += food.price
-//        
-//            food.qty += 1
-//        }
-//        
-//    }
-
+class CartModel: ObservableObject {
+    @Published var classCart = [Food]()
+    @Published var classTotal: Float = 0
 
     
+    func increaseQTY(food: Food){
+        
+        food.qty += 1
+        total += food.price
+        classTotal = total
+        
+    }
+    func decreaseQTY(food: Food){
+        if (food.qty > 1) {
+            let ndx = cart.firstIndex(where: {$0.qty == food.qty})
+            cart[ndx!].qty = food.qty
+                        food.qty -= 1
+                        total -= food.price
+                        classTotal = total
+        } else if let i = cart.firstIndex(where: {$0.name == food.name}) {
+            total -= food.price
+                        classTotal = total
+                        cart.remove(at: i)
+        } else {
+            print("this is broken")
+        }
+
+
+    }
+    
+    
+    func addToCart(food: Food) {
+       
+        if let ndx = cart.firstIndex(where: {$0.name == food.name}) {
+            // already have this cart/item, do an update here
+            cart[ndx].price = food.price
+            cart[ndx].qty = food.qty
+            food.qty += 1
+            total += food.price
+            
+            classTotal = total
+        } else {
+            // add a new cart/item
+           
+            cart.append(food)
+            total += food.price
+            
+            classCart = cart
+            classTotal = total
+            
+            
+            
+            
+        }
+    }
+    
+}
+
+
+
+
+
