@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+
 struct Inventorydisplay: View {
     
-    var checkout = CheckoutView()
-    var food:Food
+    @StateObject var cartModel:CartModel = CartModel()
+    @StateObject var food = Food(name: "apples", price: 1, farm: "Blake's", image: "Apple", qty:1)
+  
     var body: some View{
         
         
@@ -33,25 +35,21 @@ struct Inventorydisplay: View {
                     Text(food.farm!)
                     
                     Button {
-
-                        checkout.addToCart(food:food)
+                        
+                        cartModel.addToCart(food: food)
 
                     } label: {
                         Image("addToCart")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 100, height: 100)
-                    } 
+                    }
                     
-                    //                    .background(.green)
-                    //                    .foregroundColor(Color.black)
-                    //                    .padding(20)
-                    //
+       
                     
                 }
                 Spacer()
                     .frame(width: 30)
-                
                 
                 
                 
@@ -71,6 +69,8 @@ struct Inventorydisplay: View {
 
 struct CatalogView: View {
     @State private var searchField:String = ""
+    @ObservedObject var cartModel:CartModel = CartModel()
+    @ObservedObject var food = Food(name: "apples", price: 1, farm: "Blake's", image: "Apple", qty:1)
     var sectionBreak = "_________________________________________"
     let columns = [GridItem(.adaptive(minimum: 150), spacing: 10)]
     
@@ -78,6 +78,7 @@ struct CatalogView: View {
         NavigationView{
     
             VStack() {
+              
                 Text("Deal of the Day")
                     .font(.system(size: 36))
                     .position(x: 250, y:-50)
@@ -153,7 +154,7 @@ struct CatalogView: View {
                 Text(sectionBreak)
                 
 
-                NavigationLink(destination: CheckoutView()
+                NavigationLink(destination: CheckoutView(food: food)
                                
                                
                 ) {
