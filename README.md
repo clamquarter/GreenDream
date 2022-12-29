@@ -1,7 +1,7 @@
 # GreenDream
 
+<h3>Summary</h3>
 GreenDream is a project I worked on during the Apple Developer Academy Foundations Course. My team was tasked with coming up with an app idea to improve lives, and we came up with an app that would link local farmers with shoppers who want to support their community. A sort of local Instacart.
-
 
 <h3>What I Learned</h3>
 <ul>
